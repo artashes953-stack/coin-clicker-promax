@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+
+}
+body{
+    width: 100%;
+    height: 100vh;
+background: #191970;
+background: linear-gradient(145deg, #191970 0%, #000000 100%);
+}
+#boss{
+    width: 100%;
+    height: 100vh;
+}
+#game{
+    position: relative;
+    display: flex;
+        width:200%;
+    height: 100vh;
+}
+#dzax{
+width: 33.3333333333%;
+height: 100vh;
+border: 5px solid black;
+}
+#mejtex{
+    width:33.3333333333%;
+height: 100vh;
+border: 5px solid black;
+background: linear-gradient(120deg, #050b14 0%, #10224a 55%, #2563eb 100%);
+}
+#camera{
+      width:33.3333333333%;
+height: 100vh;
+border: 5px solid black;
+background: linear-gradient(120deg, #050b14 0%, #10224a 55%, #2563eb 100%);  
+}
+#titcam{
+    position: absolute;
+    left:280vh;
+    color: #00ffff;
+    font-size: 4rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 30vh;
+background: #0F2027;
+background: linear-gradient( #0F2027 0%, #203A43 50%, #2C5364 100%);
+z-index: -23;
+}
+#title{
+    position: absolute;
+    top: 0;
+    font-size: 5rem;
+    color: cyan;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#coinsp{
+    position: absolute;
+    top: 0;
+    font-size: 3.5rem;
+    color: cyan;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    left: 70vh;
+}
+#rebp{
+     position: absolute;
+    top: 6.7vh;
+    font-size: 3.5rem;
+    color: cyan;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    left: 70vh;
+}
+#clicksp{
+         position: absolute;
+    top: 21vh;
+    font-size: 3.5rem;
+    color: cyan;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    left: 70vh;
+}
+#powp{
+       position: absolute;
+    top: 13vh;
+    font-size: 4rem;    color: cyan;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    left: 70vh;  
+}
+#click,#rebtn{
+    position: absolute;
+    font-size: 15rem;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+#click{
+    left: 48vh;
+    top: 46vh;
+}
+#rebtn{
+       left: 88vh;
+    top: 46vh; 
+}
+#panp{
+    position: relative;
+    left: 1vh;
+  color: #00ffff; 
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6), 
+               0 0 20px rgba(0, 255, 255, 0.4);
+  font-weight: 500; 
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#Kopek{
+    position: absolute;
+    top: 14vh;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    z-index: 34;
+    
+}
+#panel{
+    position: absolute;
+    background: red;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-base: system-ui, -apple-system, sans-serif;
+  --radius: 8px;
+  
+  --bg-panel: #ffffff;
+  --bg-input: #f9fafb;
+  --border-color: #e5e7eb;
+  --text-main: #1f2937;
+  
+  --color-add: #10b981;       
+  --color-add-hover: #059669;
+  
+  --color-set: #3b82f6;       
+  --color-set-hover: #2563eb;
+}
+
+#panel {
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  width: 32.3333333333%;
+  height: 100vh;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  margin: 20px auto;
+  gap: 12px;       
+}
+
+#coininp, #addcoins, #setcoins {
+  font-family: var(--font-base);
+  font-size: 16px;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+#coininp,#powerinp {
+  flex: 1;         
+  min-width: 140px; 
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius);
+  background-color: var(--bg-input);
+  color: var(--text-main);
+  font-weight: 600;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+#coininp:focus,#powerinp:focus {
+  background-color: #ffffff;
+  border-color: var(--color-set);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+#addcoins, #setcoins,#addpower,#setpower {
+  padding: 12px 20px;
+  font-weight: 600;
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s, transform .2s;
+}
+
+#addcoins:active, #setcoins:active {
+  transform: scale(0.96);
+}
+
+#addcoins {
+  background-color: var(--color-add);
+}
+
+#addcoins:hover {
+  background-color: var(--color-add-hover);
+}
+
+#setcoins {
+  background-color: var(--color-set);
+}
+
+#setcoins:hover {
+  background-color: var(--color-set-hover);
+}
+
+
+
+#addpower:active, #setpower:active {
+  transform: scale(0.96);
+}
+
+#addpower {
+  background-color: var(--color-add);
+}
+
+#setpower:hover {
+  background-color: var(--color-add-hover);
+}
+
+#setpower {
+  background-color: var(--color-set);
+}
+
+#setpower:hover {
+  background-color: var(--color-set-hover);
+}
+#cmo{
+    position: relative;
+    left: 20vh;
+    top: 20vh;
+    transition: .8s;
+}
+#bordon,#bordof{
+    position: relative;
+    padding: 30px 35px;
+    border: 10px 15px;
+    background: linear-gradient(#10224a,#10b981);
+    border: none;
+    bottom: -200px;
+    box-shadow: 0 0 40px #059669;
+    transition: .2s;
+}
+#bordon{
+    position: relative;
+    left: -600px;
+}
+#bordof{
+        position: relative;
+    left: -560px;
+}
+#bordon:active,#bordof:active{
+scale: .9;
+}
+#cmo.woo{
+    border-radius: 50%;
+}
