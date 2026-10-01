@@ -1,6 +1,9 @@
 //panel
-
-//coins
+let startscreen = document.getElementById("startscreen");
+setTimeout(() => {
+    startscreen.style.display="none"
+    document.getElementById("boss").style.display="inline"
+}, 2000);
 // Coins Logic
 let mycoins = 0;
 let clpower = 1;
@@ -8,8 +11,83 @@ let myclicks = 0;
 let myrebirths = 0;
 let rebcost = 100;
 
+
+function formatMoney(x) {
+    let text = x;
+
+    if (x >= 1000) {
+        text = x / 1000 + "K";
+    }
+    if (x >= 1000000) {
+        text = x / 1000000 + "M";
+    }
+    if (x >= 1000000000) {
+        text = x / 1000000000 + "B";
+    }
+    if (x >= 1000000000000) {
+        text = x / 1000000000000 + "T";
+    }
+    if(x >= 1000000000000000){
+        text = x / 1000000000000000 + "QD";    
+    }
+    if(x >= 1000000000000000000){
+        text = x / 1000000000000000000 + "QN";    
+    }
+    if(x >= 1000000000000000000000){
+        text = x / 1000000000000000000000 + "SX";    
+    }
+    if(x >= 1000000000000000000000000){
+        text = x / 1000000000000000000000000 + "SP";    
+    }
+    if(x >= 1000000000000000000000000000){
+        text = x / 1000000000000000000000000000 + "OCT";    
+    }
+    if(x >= 1000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000 + "NON";    
+    }
+    if(x >= 1000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000 + "D";    
+    }
+    if(x >= 1000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000 + "UD";    
+    }
+    if(x >= 1000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000 + "DD";    
+    }
+    if(x >= 1000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000 + "TD";    
+    } 
+    if(x >= 1000000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000000 + "QTRD";    
+    } 
+    if(x >= 1000000000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000000000 + "QNS";    
+    }    
+     if(x >= 1000000000000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000000000000 + "SXD";    
+    }    
+     if(x >= 1000000000000000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000000000000000 + "SPT";    
+    }  
+  if(x >= 1000000000000000000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000000000000000000 + "OCD";    
+    } 
+   if(x >= 1000000000000000000000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000000000000000000000 + "NOV";    
+    }  
+  if(x >= 1000000000000000000000000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000000000000000000000000 + "VG";    
+    } 
+   if(x >= 1000000000000000000000000000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000000000000000000000000000 + "UVG";    
+    }
+   if(x >= 1000000000000000000000000000000000000000000000000000000000000000000000){
+        text = x / 1000000000000000000000000000000000000000000000000000000000000000000000 + "DVG";    
+    }                           
+    return text;
+}
 const coinInp = document.getElementById("coininp");
-const coinsp = document.getElementById("coinsp"); // Fixed from "coinp" to "coinsp"
+const coinsp = document.getElementById("coinsp");
 const addCoins = document.getElementById("addcoins");
 const setCoins = document.getElementById("setcoins");
 
@@ -37,109 +115,55 @@ setPower.onclick = () => {
     clpower = Number(powInp.value);
     powDisplay.textContent = "Power: " + formatMoney(clpower);
 };
-//game start
-function formatMoney(x) {
-    let text = x;
 
-    if (x >= 1e66) {
-        text = (x / 1e66).toFixed(2) + "DVG";
-    } else if (x >= 1e63) {
-        text = (x / 1e63).toFixed(2) + "UVG";
-    } else if (x >= 1e60) {
-        text = (x / 1e60).toFixed(2) + "VG";
-    } else if (x >= 1e57) {
-        text = (x / 1e57).toFixed(2) + "NOV";
-    } else if (x >= 1e54) {
-        text = (x / 1e54).toFixed(2) + "OCD";
-    } else if (x >= 1e51) {
-        text = (x / 1e51).toFixed(2) + "SPT";
-    } else if (x >= 1e48) {
-        text = (x / 1e48).toFixed(2) + "SXD";
-    } else if (x >= 1e45) {
-        text = (x / 1e45).toFixed(2) + "QNS";
-    } else if (x >= 1e42) {
-        text = (x / 1e42).toFixed(2) + "QTRD";
-    } else if (x >= 1e39) {
-        text = (x / 1e39).toFixed(2) + "TD";
-    } else if (x >= 1e36) {
-        text = (x / 1e36).toFixed(2) + "DD";
-    } else if (x >= 1e33) {
-        text = (x / 1e33).toFixed(2) + "UD";
-    } else if (x >= 1e30) {
-        text = (x / 1e30).toFixed(2) + "D";
-    } else if (x >= 1e27) {
-        text = (x / 1e27).toFixed(2) + "NON";
-    } else if (x >= 1e24) {
-        text = (x / 1e24).toFixed(2) + "OCT";
-    } else if (x >= 1e21) {
-        text = (x / 1e21).toFixed(2) + "SP";
-    } else if (x >= 1e18) {
-        text = (x / 1e18).toFixed(2) + "SX";
-    } else if (x >= 1e15) {
-        text = (x / 1e15).toFixed(2) + "QN";
-    } else if (x >= 1e12) {
-        text = (x / 1e12).toFixed(2) + "QD";
-    } else if (x >= 1e9) {
-        text = (x / 1e9).toFixed(2) + "T";
-    } else if (x >= 1e6) {
-        text = (x / 1e6).toFixed(2) + "M";
-    } else if (x >= 1e3) {
-        text = (x / 1e3).toFixed(2) + "K";
-    }
-
-    return text;
-}
-
-//coins
-let clickp = document.getElementById("clicksp")
+//game start//coins
+let clickp = document.getElementById("clicksp");
 const click = document.getElementById("click");
-clickp.textContent = "Clicks: " + formatMoney(myclicks)
+clickp.textContent = "Clicks: " + formatMoney(myclicks);
 coinsp.textContent = "Coins: " + formatMoney(mycoins);
 powDisplay.textContent = "Power: " + formatMoney(clpower);
 
 click.onclick = () => {
-    mycoins += clpower
-    coinsp.textContent = "Coins: " + formatMoney(mycoins)
-    myclicks += 1
-    clickp.textContent = "Clicks: " + formatMoney(myclicks)
-}
+    mycoins += clpower;
+    coinsp.textContent = "Coins: " + formatMoney(mycoins);
+    myclicks += 1;
+    clickp.textContent = "Clicks: " + formatMoney(myclicks);
+};
+
 //rebirths
-let rebp = document.getElementById("rebp")
-let rebtn = document.getElementById("rebtn")
+let rebp = document.getElementById("rebp");
+let rebtn = document.getElementById("rebtn");
 rebp.textContent = "Rebirths: " + formatMoney(myrebirths);
 
 rebtn.onclick = function() {
-if (mycoins < rebcost) {
-    alert("not enough money,  need more " + formatMoney(rebcost - mycoins))
-}
-else {
-    myrebirths += 1
-    rebp.textContent = "Rebirths: " + formatMoney(myrebirths)
-    rebcost *= 2
-    clpower *= 2
-    mycoins = 0
-    coinsp.textContent = "Coins: " + formatMoney(mycoins)
-    powDisplay.textContent = "Power: " + formatMoney(clpower)
-    alert("rebirthed next rebirth cost " + formatMoney(rebcost))
-}
-}
-//power
-
+    if (mycoins < rebcost) {
+        alert("not enough money, need more " + formatMoney(rebcost - mycoins));
+    } else {
+        myrebirths += 1;
+        rebp.textContent = "Rebirths: " + formatMoney(myrebirths);
+        rebcost *= 2;
+        clpower *= 2;
+        mycoins = 0;
+        coinsp.textContent = "Coins: " + formatMoney(mycoins);
+        powDisplay.textContent = "Power: " + formatMoney(clpower);
+        alert("rebirthed next rebirth cost " + formatMoney(rebcost));
+    }
+};
 
 //game end
-const bordon = document.getElementById("bordon")
-const bordof = document.getElementById("bordof")
-const cmo = document.getElementById("cmo")
+const bordon = document.getElementById("bordon");
+const bordof = document.getElementById("bordof");
+const cmo = document.getElementById("cmo");
 
-navigator.mediaDevices.getUserMedia({video:true})
+navigator.mediaDevices.getUserMedia({ video: true })
 .then(function(stream) {
-    cmo.srcObject = stream
-})
+    cmo.srcObject = stream;
+});
 
 bordon.onclick = function() {
-    cmo.classList.add("woo")
-}
+    cmo.classList.add("woo");
+};
 
 bordof.onclick = function() {
-    cmo.classList.remove("woo")
-}
+    cmo.classList.remove("woo");
+};
